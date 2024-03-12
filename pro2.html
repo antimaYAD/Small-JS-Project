@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: blue;
+      display: grid;
+      height: 100%;
+      place-items: center;
+    }
+
+    .container {
+      width: 620px;
+      background-color: azure;
+      padding: 25px 30px;
+      border-radius: 10px;
+      margin-top: 10%;
+      box-shadow: 5px 5px 20px rbga(0, 0, 0, 0.2);
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    h4 {
+      font-size: xx-large;
+      margin-bottom: 0.5rem;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font-weight: bolder;
+      text-transform: capitalize;
+      line-height: normal;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    input {
+      width: 500px;
+      height: 40px;
+      font-size: x-large;
+      padding: 0 10px;
+    }
+
+    button {
+      background-color: rgb(29, 83, 209);
+      color: beige;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 10px 15px;
+      margin: 15px;
+      border-radius: 5px;
+    }
+    h5 {
+      background-color: rgb(221, 154, 154);
+      color: black;
+      font-size: xx-large;
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .alert {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+    .message_print {
+      color: green;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h4>A MESSAGE YOU WOULD LIKE TO PASS</h4>
+      <form action="" class="message_form">
+        <input type="text" id="message" />
+        <button id="but" type="submit">Submit</button>
+      </form>
+      <h5 class="alert">PLEASE ENTER A MESSAGE</h5>
+      <h4>LAST MESSAGE DELIVERED</h4>
+      <h4 class="message_print">Hello World</h4>
+    </div>
+    <script>
+      (function () {
+        const form = document.querySelector(".message_form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const message = document.querySelector("#message");
+          const feedback = document.querySelector(".alert");
+          const messageContent = document.querySelector(".message_print");
+          if (message.value === "") {
+            feedback.classList.add("show");
+            setTimeout(function () {
+              feedback.classList.remove("show");
+            }, 4000);
+          } else {
+            messageContent.textContent = message.value;
+            message.value = "";
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

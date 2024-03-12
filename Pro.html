@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #but{
+        padding: 14px 16px;
+        background-color:#575a57 ;
+        border: none;
+        cursor: pointer;
+        margin: 40vh 90vh;
+        font-size : large;
+        border-radius: 5px solid black;
+    }
+</style>
+<body>
+     
+     <button id="but" onclick="changeB()">CLICK ME</button>
+
+     <script>
+        // const but = document.getElementById('but');
+        const body = document.querySelector('body');
+        const color = ['red','green','blue','yellow','pink','brown'];
+        body.style.backgroundColor = 'violet'
+
+
+         function changeB(){
+            const colorindex = parseInt(Math.random()*color.length);
+            body.style.backgroundColor = color[colorindex];     
+        }
+     </script>
+
+</body>
+</html>

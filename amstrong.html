@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width= , initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //AMSTRONG NUMBER
+      /* var number = prompt("please enter a number");
+       var temp = number;
+       var a = number.toString().length;
+       var sum = 0;
+
+       while (temp > 0) {
+         var digit = temp % 10;
+
+         sum += digit ** a;
+
+         temp = parseInt(temp / 10);
+       }
+       if (sum == number) {
+         console.log(`${number} is an amstrong number`);
+       } else {
+         console.log(`${number} is not an  amstrong number `);
+       }*/
+
+      // PALINDROME PROGRAMM
+      /* var string = prompt("please enter a string");
+
+       var stringArray = string.split('');
+       var stringArrayRev = stringArray.reverse();
+       var stringfinal = stringArrayRev.join('');
+
+       if (string === stringfinal) {
+         console.log(`${string} yes it's palindrome`);
+       } else {
+         console.log(`${string}no its not palindrome`);
+       }*/
+      // check the ouccrence of the letter
+
+      /* var string = prompt(" enter a string");
+      var letter = prompt("  enter a letter");
+      var strlen = string.length;
+      var count = 0;
+      for (var i = 0; i < strlen; i++) {
+        if (string[i] === letter) {
+          count++;
+        }
+      }
+      console.log(`${string} >> ${letter}>>${count}`); */
+
+      // Amstrong number in interval
+
+      /* var a = prompt("please enter a lower number");
+      var b = prompt("please enter a higher number");
+
+      for (var i = a; i <= b; i++) {
+        var temp = i;
+        var sum = 0;
+        var noOfstring = i.toString().length;
+
+        while (temp > 0) {
+          var digit = temp % 10;
+          temp = parseInt(temp / 10);
+          sum += digit ** noOfstring;
+        }
+        if (sum == i) {
+          console.log(i);
+        }
+      } */
+      // sum of natural number
+     var n = prompt("enter a number")
+      function sum(num) {
+        if (num > 0) {
+          return num + sum(num - 1);
+        } else {
+          return num;
+        }
+      }
+      var res = sum(parseInt(n));
+      console.log(res);
+    </script>
+  </body>
+</html>
